@@ -9,6 +9,7 @@
   "module": "dist/ui-vue.esm.js",
   "unpkg": "dist/ui-vue.umd.min.js",
   "browser": "dist/ui-vue.js",
+  "typings": "./types/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "npx rollup -c",
