@@ -1,0 +1,115 @@
+.ui-alert-fade-enter-to {
+  transform: translateX(100%);
+}
+
+.ui-alert-fade-leave-to {
+  transform: translateX(100%);
+}
+
+.ui-alert-fade-enter-active {
+  opacity: 0;
+}
+
+.ui-alert {
+  padding: 1.2rem;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  height: auto;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  position: relative;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .5s, transform .5s, left .5s, right .5s, top .5s, bottom .5s;
+
+  &.ui-alert--default {
+    color: #A1A1A1;
+    background-color: #EDEDED;
+    border-left: 8px solid #BABABA;
+  }
+
+  &.ui-alert--success {
+    color: #23AD5C;
+    background-color: #C3F3D7;
+    border-left: 8px solid #2ED573;
+  }
+
+  &.ui-alert--warning {
+    color: #CE8500;
+    background-color: #FFDB9B;
+    border-left: 8px solid #FFA502;
+  }
+
+  &.ui-alert--error {
+    color: #FF4757;
+    background-color: #FFE0E3;
+    border-left: 8px solid #FF4757;
+  }
+
+  &.ui-alert--info {
+    color: #3EB6FF;
+    background-color: #D7F0FF;
+    border-left: 8px solid #71C9FF;
+  }
+
+  &.ui-alert--rounded {
+    border-radius: 8px;
+  }
+
+  &.ui-alert--flat {
+    box-shadow: none;
+  }
+
+  & > .ui-alert__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & > .ui-alert__icon {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+
+      & > svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    & > .ui-alert__content__title {
+      &.ui-alert--bold {
+        font-weight: 700;
+      }
+    }
+
+    & > .ui-alert__content--left {
+      justify-content: flex-start;
+    }
+
+    & > .ui-alert__content--center {
+      justify-content: center;
+    }
+
+    & > .ui-alert__content--right {
+      justify-content: flex-end;
+    }
+  }
+
+  & > .ui-alert__close {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

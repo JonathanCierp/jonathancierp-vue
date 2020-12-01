@@ -1,5 +1,5 @@
 <template>
-  <div>Hello world</div>
+  <ui-alert title="test" />
 </template>
 
 <script lang="ts">

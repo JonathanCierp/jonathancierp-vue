@@ -2,14 +2,16 @@ import { App } from "vue"
 
 import UiAlert from "./components/UiAlert"
 
+import "./styles/index.less"
+
 const components = [
   UiAlert
 ]
 
-const install = (Vue: App) => {
-  for (const component of components) {
+const install = function(Vue: App) {
+  components.forEach((component) => {
     Vue.component(component.name, component)
-  }
+  })
 
   //Vue.config.globalProperties.$Message = Message
   //Vue.config.globalProperties.$Notification = Notification

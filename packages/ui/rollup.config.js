@@ -1,11 +1,12 @@
-import vue from "rollup-plugin-vue"
 import cjs from "@rollup/plugin-commonjs"
 import filesize from "rollup-plugin-filesize"
 import { terser } from "rollup-plugin-terser"
+import less from "rollup-plugin-less"
 import nodeResolve from "./build/resolve"
 import VuePlugin from "rollup-plugin-vue"
 import babel from "./build/babel"
-import css from "rollup-plugin-css-only"
+import CleanCSS from "clean-css"
+import fs from "fs"
 
 // const isProduction = !process.env.ROLLUP_WATCH
 
@@ -26,16 +27,23 @@ export default () => {
         nodeResolve(),
         VuePlugin(),
         cjs(),
+        less({
+          output: (css) => {
+            const newcss = new CleanCSS().minify(css)
+            fs.writeFile("dist/ui-vue.css", newcss.styles, () => {
+            })
+            return newcss.styles
+          }
+        }),
         babel(),
-        terser(),
-        css(),
-        vue()
+        terser()
       ]
     },
     // CJS & SSR build
     {
       input: "src/index.ts",
-      output: { format: "cjs",
+      output: {
+        format: "cjs",
         file: "dist/ui-vue.cjs.js",
         exports: "named"
       },
@@ -46,10 +54,9 @@ export default () => {
         nodeResolve(),
         VuePlugin(),
         cjs(),
+        less({output: false}),
         babel(),
-        terser(),
-        css(),
-        vue({ template: { optimizeSSR: true } })
+        terser()
       ]
     },
     // UMD
@@ -69,10 +76,9 @@ export default () => {
         nodeResolve(),
         VuePlugin(),
         cjs(),
+        less({output: false}),
         babel(),
-        terser(),
-        css(),
-        vue()
+        terser()
       ]
     },
     // Browser build
@@ -92,10 +98,9 @@ export default () => {
         nodeResolve(),
         VuePlugin(),
         cjs(),
+        less({output: false}),
         babel(),
-        terser(),
-        css(),
-        vue()
+        terser()
       ]
     }
   ]

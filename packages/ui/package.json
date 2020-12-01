@@ -8,7 +8,6 @@
   "main": "dist/ui-vue.cjs.js",
   "module": "dist/ui-vue.esm.js",
   "unpkg": "dist/ui-vue.umd.min.js",
-  "browser": "dist/ui-vue.js",
   "typings": "./types/index.d.ts",
   "scripts": {
     "dev": "vite",
@@ -34,6 +33,7 @@
     "@vue/compiler-sfc": "^3.0.2",
     "babel-plugin-pure-calls-annotation": "^0.3.1",
     "babel-plugin-typescript-iife-enum": "^0.2.1",
+    "clean-css": "^4.2.3",
     "rollup": "^2.34.0",
     "rollup-plugin-css-only": "^3.0.0",
     "rollup-plugin-filesize": "^9.0.2",

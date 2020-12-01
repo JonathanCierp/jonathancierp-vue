@@ -1,7 +1,7 @@
-import UiAlert from "./UiAlert.vue"
 import { App } from "vue"
+import UiAlert from "./UiAlert.vue"
 
-UiAlert.install = (Vue: App) => {
+UiAlert.install = function(Vue: App) {
   Vue.component(UiAlert.name, UiAlert)
 }
 
