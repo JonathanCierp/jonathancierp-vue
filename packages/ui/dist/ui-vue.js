@@ -1,0 +1,1 @@
+var UiVue=function(e){"use strict";const t={__file:"src/components/UiAlert/UiAlert.vue",install:e=>{e.component(t.name,t)}},n=[t];var o={install:e=>{for(const t of n)e.component(t.name,t)}};return e.UiAlert=t,e.default=o,Object.defineProperty(e,"__esModule",{value:!0}),e}({});

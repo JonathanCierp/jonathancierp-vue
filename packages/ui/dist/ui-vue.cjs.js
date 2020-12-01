@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const e={__file:"src/components/UiAlert/UiAlert.vue",install:t=>{t.component(e.name,e)}},t=[e];var o={install:e=>{for(const o of t)e.component(o.name,o)}};exports.UiAlert=e,exports.default=o;
