@@ -1,11 +1,13 @@
 import { App } from "vue"
 
 import UiAlert from "./components/UiAlert"
+import UiBadge from "./components/UiBadge"
 
 import "./styles/index.less"
 
 const components = [
-  UiAlert
+  UiAlert,
+  UiBadge,
 ]
 
 const install = function(Vue: App) {
@@ -21,3 +23,4 @@ const install = function(Vue: App) {
 export default { install }
 
 export { default as UiAlert } from "./components/UiAlert"
+export { default as UiBadge } from "./components/UiBadge"
