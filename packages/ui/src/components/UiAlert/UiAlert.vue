@@ -58,7 +58,7 @@ import { defineComponent, ref, computed, onMounted } from "vue"
 import { ALIGN, TYPE } from "../../../types"
 
 export default defineComponent({
-  name: "UiAlert",
+  name: "ui-alert",
   props: {
     title: {
       type: String,
@@ -70,13 +70,13 @@ export default defineComponent({
     },
     type: {
       type: String,
-      default: "default", // Values "default" |"success" |"warning" |"error" |"info"
+      default: TYPE.DEFAULT, // Values "default" |"success" |"warning" |"error" |"info"
       validator: (value: TYPE) => [TYPE.DEFAULT, TYPE.SUCCESS, TYPE.WARNING, TYPE.ERROR, TYPE.INFO].includes(value)
     },
     align: {
       type: String,
-      default: "left", // Values "start" | "center" | "end"
-      validator: (value: ALIGN) => [ALIGN.START, ALIGN.CENTER, ALIGN.END].includes(value)
+      default: ALIGN.LEFT, // Values "left" | "center" | "right"
+      validator: (value: ALIGN) => [ALIGN.LEFT, ALIGN.CENTER, ALIGN.RIGHT].includes(value)
     },
     icon: {
       type: Boolean,

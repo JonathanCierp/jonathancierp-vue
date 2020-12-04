@@ -9,15 +9,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted } from "vue"
+import { defineComponent, computed } from "vue"
 import { TYPE } from "../../../types"
 
 export default defineComponent({
-  name: "UiBadge",
+  name: "ui-badge",
   props: {
     type: {
       type: String,
-      default: "default", // Values "default" |"success" |"warning" |"error" |"info"
+      default: TYPE.DEFAULT, // Values "default" |"success" |"warning" |"error" |"info"
       validator: (value: TYPE) => [TYPE.DEFAULT, TYPE.SUCCESS, TYPE.WARNING, TYPE.ERROR, TYPE.INFO].includes(value)
     },
     inset: {
@@ -30,12 +30,6 @@ export default defineComponent({
     }
   },
   setup(props, { slots }) {
-    /* Lyfecycle hooks */
-    onMounted(() => {
-      show.value = true
-    })
-    /* Datas */
-    const show = ref(false)
     /* Computed */
     const typeClass = computed(() => props.type ? `ui-badge--${props.type}` : "")
     const insetStyle = computed(() => {
@@ -43,8 +37,6 @@ export default defineComponent({
     })
 
     return {
-      /* Datas */
-      show,
       /* Computed */
       typeClass,
       insetStyle

@@ -1,5 +1,5 @@
 export enum ALIGN {
-  START = "start",
+  LEFT = "left",
   CENTER = "center",
-  END = "end"
+  RIGHT = "right"
 }
