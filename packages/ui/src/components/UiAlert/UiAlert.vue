@@ -95,7 +95,7 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props, { slots }) {
+  setup(props) {
     /* Lyfecycle hooks */
     onMounted(() => {
       document.querySelector("body").style.overflow = "hidden"

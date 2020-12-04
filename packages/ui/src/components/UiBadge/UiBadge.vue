@@ -29,7 +29,7 @@ export default defineComponent({
       default: ""
     }
   },
-  setup(props, { slots }) {
+  setup(props) {
     /* Computed */
     const typeClass = computed(() => props.type ? `ui-badge--${props.type}` : "")
     const insetStyle = computed(() => {
