@@ -5,6 +5,21 @@
   cursor: pointer;
   transition: opacity .2s, background-color .3s, color .3s;
 
+  &:disabled {
+    background-color: #E0E0E0 !important;
+    border: 1px solid #E0E0E0 !important;
+    color: #AFA8A8 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+  }
+
+  &:hover:disabled {
+    background-color: #E0E0E0 !important;
+    border: 1px solid #E0E0E0 !important;
+    color: #AFA8A8 !important;
+    cursor: not-allowed !important;
+  }
+
   &.ui-button--default {
     background-color: #607D8B;
     color: #FFF;

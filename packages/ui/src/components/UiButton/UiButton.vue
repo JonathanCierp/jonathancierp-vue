@@ -1,5 +1,5 @@
 <template>
-  <button role="button" class="ui-button" :type="nativeType"
+  <button role="button" class="ui-button" :type="nativeType" disabled
           :class="[typeClass, sizeClass, roundedClass, roundedFullClass, outlinedClass, flatClass, blockClass]"
   >
     <span class="ui-button__content" :class="[hideContentIfLoadingClass]">
