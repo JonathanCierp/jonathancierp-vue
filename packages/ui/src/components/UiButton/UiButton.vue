@@ -1,5 +1,5 @@
 <template>
-  <button role="button" class="ui-button" :type="nativeType" disabled
+  <button role="button" class="ui-button" :type="nativeType" :disabled="disabled" @click="emit('click')"
           :class="[typeClass, sizeClass, roundedClass, roundedFullClass, outlinedClass, flatClass, blockClass]"
   >
     <span class="ui-button__content" :class="[hideContentIfLoadingClass]">
@@ -56,8 +56,12 @@
         type: Boolean,
         default: false
       },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
     },
-    setup(props, { slots, emit }) {
+    setup(props, { emit }) {
       /* Computed */
       const typeClass = computed(() => props.type ? `ui-button--${props.type}` : "")
       const sizeClass = computed(() => props.size ? `ui-button--${props.size}` : "")
