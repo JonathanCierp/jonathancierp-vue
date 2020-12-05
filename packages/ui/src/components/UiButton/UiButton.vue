@@ -1,12 +1,12 @@
 <template>
-  <button role="button" class="ui-button" :type="nativeType" :disabled="disabled" @click="emit('click')"
+  <button role="button" class="ui-button" :type="nativeType" :disabled="disabled" @click="onClick"
           :class="[typeClass, sizeClass, roundedClass, roundedFullClass, outlinedClass, flatClass, blockClass]"
   >
     <span class="ui-button__content" :class="[hideContentIfLoadingClass]">
       <slot />
     </span>
-    <span style="position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);">
-      Loading...
+    <span v-if="loading" class="ui-button__loading">
+      <ui-progress-circular color="#FFF" indeterminate />
     </span>
   </button>
 </template>
@@ -72,6 +72,13 @@
       const blockClass = computed(() => props.block ? "ui-button--block" : "")
       const hideContentIfLoadingClass = computed(() => props.loading ? "ui-button__content--hidden" : "")
 
+      /* Methods */
+      const onClick = () => {
+        if(!props.loading) {
+          emit('click')
+        }
+      }
+
       return {
         /* Computed */
         typeClass,
@@ -81,7 +88,9 @@
         outlinedClass,
         flatClass,
         blockClass,
-        hideContentIfLoadingClass
+        hideContentIfLoadingClass,
+        /* Methods */
+        onClick
       }
     }
   })

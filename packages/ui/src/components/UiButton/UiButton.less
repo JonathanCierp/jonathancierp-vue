@@ -140,6 +140,13 @@
     }
   }
 
+  & .ui-button__loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   &.ui-button--xs {
     height: 20px;
     min-width: 36px;
@@ -148,6 +155,16 @@
 
     &.ui-button--rounded {
       border-radius: 4px;
+    }
+
+    & .ui-button__loading {
+      width: 12px !important;
+      height: 12px !important;
+
+      & .ui-progress-circular {
+        width: 12px !important;
+        height: 12px !important;
+      }
     }
   }
 
@@ -160,6 +177,16 @@
     &.ui-button--rounded {
       border-radius: 5px;
     }
+
+    & .ui-button__loading {
+      width: 18px !important;
+      height: 18px !important;
+
+      & .ui-progress-circular {
+        width: 18px !important;
+        height: 18px !important;
+      }
+    }
   }
 
   &.ui-button--md {
@@ -170,6 +197,16 @@
 
     &.ui-button--rounded {
       border-radius: 7px;
+    }
+
+    & .ui-button__loading {
+      width: 20px !important;
+      height: 20px !important;
+
+      & .ui-progress-circular {
+        width: 20px !important;
+        height: 20px !important;
+      }
     }
   }
 
@@ -182,6 +219,16 @@
     &.ui-button--rounded {
       border-radius: 8px;
     }
+
+    & .ui-button__loading {
+      width: 28px !important;
+      height: 28px !important;
+
+      & .ui-progress-circular {
+        width: 28px !important;
+        height: 28px !important;
+      }
+    }
   }
 
   &.ui-button--xl {
@@ -192,6 +239,16 @@
 
     &.ui-button--rounded {
       border-radius: 10px;
+    }
+
+    & .ui-button__loading {
+      width: 35px !important;
+      height: 35px !important;
+
+      & .ui-progress-circular {
+        width: 35px !important;
+        height: 35px !important;
+      }
     }
   }
 
@@ -204,7 +261,6 @@
   }
 
   & .ui-button__content {
-
     &.ui-button__content--hidden {
       visibility: hidden;
     }
