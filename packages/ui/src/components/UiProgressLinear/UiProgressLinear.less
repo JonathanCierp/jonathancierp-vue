@@ -1,0 +1,107 @@
+@-webkit-keyframes indeterminate-ltr {
+  0% {
+    left: -90%;
+    right: 100%
+  }
+  60% {
+    left: -90%;
+    right: 100%
+  }
+  to {
+    left: 100%;
+    right: -35%
+  }
+}
+
+@keyframes indeterminate-ltr {
+  0% {
+    left: -90%;
+    right: 100%
+  }
+  60% {
+    left: -90%;
+    right: 100%
+  }
+  to {
+    left: 100%;
+    right: -35%
+  }
+}
+
+@-webkit-keyframes indeterminate-short-ltr {
+  0% {
+    left: -200%;
+    right: 100%
+  }
+  60% {
+    left: 107%;
+    right: -8%
+  }
+  to {
+    left: 107%;
+    right: -8%
+  }
+}
+
+@keyframes indeterminate-short-ltr {
+  0% {
+    left: -200%;
+    right: 100%
+  }
+  60% {
+    left: 107%;
+    right: -8%
+  }
+  to {
+    left: 107%;
+    right: -8%
+  }
+}
+
+.ui-progress-linear {
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  transition: .2s cubic-bezier(.4, 0, .6, 1);
+  width: 100%;
+
+  & .ui-progress-linear__underlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    opacity: .25;
+  }
+
+  & .ui-progress-linear__determinate, & .ui-progress-linear__indeterminate .long, & .ui-progress-linear__indeterminate .short {
+    background-color: inherit;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: auto;
+    top: 0;
+    width: auto;
+    will-change: left, right;
+    height: 100%;
+    transition: width .5s;
+  }
+
+  & .ui-progress-linear__indeterminate {
+    & .long {
+      -webkit-animation-name: indeterminate-ltr;
+      animation-name: indeterminate-ltr;
+      -webkit-animation-duration: 2.2s;
+      animation-duration: 2.2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+
+    & .short {
+      -webkit-animation-name: indeterminate-short-ltr;
+      animation-name: indeterminate-short-ltr;
+      -webkit-animation-duration: 2.2s;
+      animation-duration: 2.2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+  }
+}
