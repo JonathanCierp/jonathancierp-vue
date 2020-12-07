@@ -1,0 +1,89 @@
+.ui-card {
+  position: relative;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+
+  &.ui-card--flat {
+    box-shadow: none;
+  }
+
+  &.ui-card--rounded {
+    border-radius: 10px;
+  }
+
+  &.ui-card--rounded-full {
+    border-radius: 1000px;
+  }
+
+  &.ui-card--outlined {
+    border: 2px solid rgba(0, 0, 0, .12);
+  }
+
+  & .ui-card__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: -1;
+  }
+}
+
+.ui-card-title {
+  padding: 16px 24px 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  &.ui-card-title--left {
+    text-align: left;
+  }
+
+  &.ui-card-title--center {
+    text-align: center;
+  }
+
+  &.ui-card-title--right {
+    text-align: right;
+  }
+}
+
+.ui-card-content {
+  width: 100%;
+  font-size: .875rem;
+  font-weight: 400;
+
+  &.ui-card-content--left {
+    text-align: left;
+  }
+
+  &.ui-card-content--center {
+    text-align: center;
+  }
+
+  &.ui-card-content--right {
+    text-align: right;
+  }
+}
+
+.ui-card-action {
+  align-items: center;
+  display: flex;
+  padding: 8px;
+
+  &.ui-card-action--left {
+    justify-content: flex-start;
+  }
+
+  &.ui-card-action--center {
+    justify-content: center;
+  }
+
+  &.ui-card-action--right {
+    justify-content: flex-end;
+  }
+}

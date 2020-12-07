@@ -3,6 +3,7 @@ import { App } from "vue"
 import UiAlert from "./components/UiAlert"
 import UiBadge from "./components/UiBadge"
 import UiButton from "./components/UiButton"
+import { UiCard, UiCardTitle, UiCardContent, UiCardAction } from "./components/UiCard"
 import UiProgressCircular from "./components/UiProgressCircular"
 import UiProgressLinear from "./components/UiProgressLinear"
 import UiResize from "./components/UiResize"
@@ -14,6 +15,10 @@ const components = [
   UiAlert,
   UiBadge,
   UiButton,
+  UiCard,
+  UiCardTitle,
+  UiCardContent,
+  UiCardAction,
   UiProgressCircular,
   UiProgressLinear,
   UiResize,
@@ -35,6 +40,7 @@ export default { install }
 export { default as UiAlert } from "./components/UiAlert"
 export { default as UiBadge } from "./components/UiBadge"
 export { default as UiButton } from "./components/UiButton"
+export { UiCard, UiCardTitle, UiCardContent, UiCardAction } from "./components/UiCard"
 export { default as UiProgressCircular } from "./components/UiProgressCircular"
 export { default as UiProgressLinear } from "./components/UiProgressLinear"
 export { default as UiResize } from "./components/UiResize"
